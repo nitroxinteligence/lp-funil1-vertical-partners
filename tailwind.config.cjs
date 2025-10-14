@@ -41,4 +41,15 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  safelist: [
+    'py-8',
+    'py-10',
+    'whitespace-normal',
+    'flex-1',
+    'items-center',
+    'text-4xl',
+    'text-3xl',
+    'md:text-7xl',
+    'md:text-6xl',
+  ],
 }

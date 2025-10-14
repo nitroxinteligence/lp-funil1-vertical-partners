@@ -82,7 +82,7 @@ export default function TeamSection() {
                         Gessyan Lion
                       </h3>
                       <p className="text-sm leading-relaxed" style={{ color: '#c1c1c1' }}>
-                        Com vasta experiência em desenvolvimento de software e inteligência artificial, meu foco sempre foi criar tecnologias que resolvam problemas reais. Na VX Company, aplico esse conhecimento para construir um ecossistema que não apenas automatiza, mas redefine o que é possível em termos de eficiência e escala para nossos clientes.
+                        Prazer, eu sou o Lion. Casado, cristão e viciado em entender o que faz as pessoas dizerem “sim”. Há mais de 15 anos no mundo das vendas e 9 no digital. Minhas estratégias ajudaram empresas e experts a faturar mais de R$ 40 milhões. Hoje ensino negócios a escalar com IAs RAA que pensam, decidem e executam de forma mais humana e lucrativa.
                       </p>
                     </div>
                   </div>

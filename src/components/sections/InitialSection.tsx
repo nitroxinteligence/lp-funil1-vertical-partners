@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useForm } from 'react-hook-form';
@@ -14,10 +14,6 @@ import DiagnosticSection from './DiagnosticSection';
 import { Step } from '@/App';
 import { AnimatePresence } from 'framer-motion';
 import { AnimatedSection } from '@/components/ui/AnimatedSectionWrapper';
-import Modal from '../ui/Modal';
-import Typewriter from 'typewriter-effect';
-import { Button } from '../ui/button';
-import api from '@/lib/api';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "O nome deve ter pelo menos 2 caracteres." }),
@@ -140,7 +136,7 @@ const InitialSection = ({
       case 'sound':
         return (
           <AnimatedSection stepKey="sound" className="w-full flex flex-col items-center p-4">
-            <h2 className="text-2xl font-bold mb-8 text-white text-center">Aumente o som para melhorar sua experiência</h2>
+            <h2 className="text-5xl font-light mb-8 text-white text-center">Aumente o som para melhorar< br/> sua experiência</h2>
             <Card className="max-w-xs w-full p-2 rounded-3xl border border-[#141414] bg-transparent">
               <CardContent className="w-full p-8 md:p-12 rounded-2xl border border-[#323232] text-white text-center" style={{ backgroundColor: '#141414', boxShadow: 'inset 30px 30px 60px rgba(255, 255, 255, 0.08)' }}>
                 <p className="text-7xl font-bold">{String(countdown).padStart(2, '0')}</p>

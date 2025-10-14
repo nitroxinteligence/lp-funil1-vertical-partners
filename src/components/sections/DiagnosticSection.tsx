@@ -155,7 +155,7 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
           <CardContent className="w-full p-6 rounded-2xl border border-[#323232] bg-[#141414]">
             <h3 className="text-xl font-bold text-white mb-4">Soluções</h3>
             <div className="space-y-4 text-neutral-300">
-              {data.timelineSolutions.map((solution, index) => {
+              {data.timelineSolutions.map((solution: string, index: number) => {
                 const colonIndex = solution.indexOf(':');
                 if (colonIndex === -1) {
                   return (
@@ -263,7 +263,7 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
         </div>
       </AnimatedSection>
 
-      <Modal isOpen={isScrollModalOpen} onClose={() => setIsScrollModalOpen(false)}>
+      <Modal isOpen={isScrollModalOpen}>
         <audio ref={scrollModalAudioRef} src="https://nxbcmrqcadrgzhrengsc.supabase.co/storage/v1/object/sign/documents%20vision-site/docs-2/VX-C-AUDIO-1-2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOTNhNjgzZC1kYmQwLTRiZDctOGUzMy1hYjZmMjEwZGNhMjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2N1bWVudHMgdmlzaW9uLXNpdGUvZG9jcy0yL1ZYLUMtQVVESU8tMS0yLm1wMyIsImlhdCI6MTc2MDQwNTIwMywiZXhwIjoyMTA3MzAxMjAzfQ.hQ-qKhwUzakwJFeNoImFzrkoKH-3BVamkHwF6Kegdb4" />
         <Card className="w-full max-w-lg p-2 rounded-3xl border border-[#141414] bg-[#141414]">
           <CardContent className="w-full p-8 md:p-12 rounded-2xl border border-[#323232] text-white text-center">

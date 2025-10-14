@@ -129,7 +129,7 @@ const QualificationSection = ({ setCurrentStep, setIndustry, setInstagramProfile
         </div>
       </AnimatedSection>
 
-      <Modal isOpen={isInstaModalOpen} onClose={() => setIsInstaModalOpen(false)}>
+      <Modal isOpen={isInstaModalOpen}>
         <Card className="w-full max-w-lg p-2 rounded-3xl border border-[#141414] bg-[#141414]">
           <CardContent className="w-full p-8 rounded-2xl border border-[#323232] bg-[#141414] text-center">
             {isLoading ? (

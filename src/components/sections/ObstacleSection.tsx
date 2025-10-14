@@ -87,7 +87,7 @@ const ObstacleSection = ({ setCurrentStep, setSelectedObstacles, audioRef }: Obs
 
   return (
     <>
-      <Modal isOpen={isModalOpen} onClose={() => {}}>
+      <Modal isOpen={isModalOpen}>
         <audio ref={modalAudioRef} id="modal-audio" src="https://nxbcmrqcadrgzhrengsc.supabase.co/storage/v1/object/sign/documents%20vision-site/docs-2/VX-C-AUDIO-1-1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOTNhNjgzZC1kYmQwLTRiZDctOGUzMy1hYjZmMjEwZGNhMjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2N1bWVudHMgdmlzaW9uLXNpdGUvZG9jcy0yL1ZYLUMtQVVESU8tMS0xLm1wMyIsImlhdCI6MTc2MDM5Mzk3NiwiZXhwIjoyMTA3Mjg5OTc2fQ.BzS4Yp7MTi3j8ix8UWUjQCpuWUoIkTJFGrunxLSUgH8" autoPlay></audio>
         <Card className="w-full p-2 rounded-3xl border border-[#141414] bg-[#141414]">
           <CardContent className="w-full p-8 md:p-12 rounded-2xl border border-[#323232] text-white text-left">

@@ -97,20 +97,7 @@ const MessageSection = ({ name, obstacles, setCurrentStep }: MessageSectionProps
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
 
   return (
     <AnimatedSection stepKey="message" className="w-full flex flex-col items-center p-4">

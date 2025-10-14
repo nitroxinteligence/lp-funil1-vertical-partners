@@ -65,7 +65,7 @@ const QualificationSection = ({ setCurrentStep, setIndustry, setInstagramProfile
 
       setModalStep('result');
     } catch (err: any) {
-      setError(err.message || 'Ocorreu um erro. Tente novamente.');
+      setError('Perfil não encontrado. Tem certeza que digitou certo?');
     } finally {
       setIsLoading(false);
     }
@@ -99,18 +99,18 @@ const QualificationSection = ({ setCurrentStep, setIndustry, setInstagramProfile
                     key={option}
                     variant="outline"
                     onClick={() => handleSelect(option)}
-                    className={`w-full bg-transparent text-white px-6 py-8 rounded-lg text-left justify-start transition-all duration-300 flex items-center ${
+                    className={`w-full bg-transparent text-white px-6 py-10 rounded-lg text-left justify-start transition-all duration-300 flex items-center ${
                       selectedOption === option
                         ? 'border-custom-gold'
                         : 'border-[#3D3D3D] hover:border-custom-gold'
                     }`}
                   >
                     <CheckIcon
-                      className={`transition-all duration-300 ease-in-out text-custom-gold ${
+                      className={`transition-all duration-300 ease-in-out text-custom-gold flex-shrink-0 ${
                         selectedOption === option ? 'w-6 opacity-100 mr-4' : 'w-0 opacity-0'
                       }`}
                     />
-                    <span>{option}</span>
+                    <span className="whitespace-normal text-left flex-1">{option}</span>
                   </Button>
                 ))}
               </div>

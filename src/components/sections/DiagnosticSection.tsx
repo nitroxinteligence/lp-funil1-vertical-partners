@@ -10,6 +10,7 @@ import { Timeline } from '../ui/Timeline';
 import CheckIcon from '../ui/CheckIcon';
 import { AiLoader } from '../ui/AiLoader';
 import { RainbowButton } from '../ui/RainbowButton';
+import { supabase } from '@/lib/supabase';
 import api from '@/lib/api';
 
 interface DiagnosticSectionProps {
@@ -73,7 +74,32 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
         });
 
         if (response.status === 200) {
-          setData(response.data);
+          const diagnosticData = response.data;
+          setData(diagnosticData);
+
+          // Após gerar o diagnóstico, envie os dados para o Supabase
+          const { error: supabaseError } = await supabase
+            .from('perfis_leads')
+            .insert([
+              {
+                lead_name: name,
+                whatsapp: whatsapp,
+                instagram_username: instagramProfile?.username,
+                instagram_bio: instagramProfile?.bio,
+                instagram_followers: instagramProfile?.followers,
+                industry: industry,
+                obstacles: obstacles,
+                diagnostic_summary: diagnosticData?.personalizedSummary,
+              },
+            ]);
+
+          if (supabaseError) {
+            console.error('Error saving lead to Supabase:', supabaseError);
+            // Opcional: decidir se quer mostrar um erro para o usuário
+          } else {
+            console.log('Lead saved to Supabase successfully!');
+          }
+
         } else {
           throw new Error(response.data.error || 'Falha ao gerar o diagnóstico.');
         }
@@ -217,8 +243,8 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
   return (
     <>
       <AnimatedSection ref={sectionRef} stepKey="diagnostic" className="w-full flex flex-col items-center p-4 text-white">
-        <div className="w-full max-w-4xl">
-          <h1 className="text-7xl font-light text-center mb-12">Diagnóstico Personalizado para {name}</h1>
+        <div className="w-full max-w-4xl px-4">
+          <h1 className="text-4xl md:text-7xl font-light text-center mb-12">Diagnóstico Personalizado para {name}</h1>
 
           {instagramProfile && (
             <Card className="w-full p-2 mb-12 rounded-3xl border border-[#141414] bg-transparent">
@@ -246,7 +272,7 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
           </Card>
 
           <div className="mt-20">
-            <h2 className="text-6xl font-light text-center mb-12">Veja como foi e como será<br/> sua experiência conosco</h2>
+            <h2 className="text-3xl md:text-6xl font-light text-center mb-12">Veja como foi e como será<br/> sua experiência conosco</h2>
             <Timeline data={timelineData} />
           </div>
 

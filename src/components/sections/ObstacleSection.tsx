@@ -92,7 +92,7 @@ const ObstacleSection = ({ setCurrentStep, setSelectedObstacles, audioRef }: Obs
         <Card className="w-full p-2 rounded-3xl border border-[#141414] bg-[#141414]">
           <CardContent className="w-full p-8 md:p-12 rounded-2xl border border-[#323232] text-white text-left">
             <h2 className="text-2xl font-bold mb-4 text-center">ETAPA DESBLOQUEADA!</h2>
-            <div className="leading-relaxed">
+            <div className="leading-relaxed break-words">
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
@@ -136,18 +136,18 @@ const ObstacleSection = ({ setCurrentStep, setSelectedObstacles, audioRef }: Obs
                       key={option}
                       variant="outline"
                       onClick={() => handleSelect(option)}
-                      className={`w-full bg-transparent text-white px-6 py-8 rounded-lg text-left justify-start transition-all duration-300 flex items-center ${
+                      className={`w-full bg-transparent text-white px-4 py-8 rounded-lg text-left justify-start transition-all duration-300 flex items-center ${
                         isSelected
                           ? 'border-custom-gold'
                           : 'border-[#3D3D3D] hover:border-custom-gold'
                       }`}
                     >
                       <CheckIcon
-                        className={`transition-all duration-300 ease-in-out text-custom-gold ${
+                        className={`transition-all duration-300 ease-in-out text-custom-gold flex-shrink-0 ${
                           isSelected ? 'w-6 opacity-100 mr-4' : 'w-0 opacity-0'
                         }`}
                       />
-                      <span>{option}</span>
+                      <span className="text-sm md:text-base whitespace-normal text-left flex-1">{option}</span>
                     </Button>
                   );
                 })}

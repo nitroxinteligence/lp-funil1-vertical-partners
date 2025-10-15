@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect } from 'react';
 
 interface ModalProps {
   isOpen: boolean;
@@ -6,6 +7,19 @@ interface ModalProps {
 }
 
 const Modal = ({ isOpen, children }: ModalProps) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // Cleanup function to ensure the class is removed when the component unmounts
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (

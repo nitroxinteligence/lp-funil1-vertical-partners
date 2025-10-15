@@ -81,7 +81,7 @@ const ObstacleSection = ({ setCurrentStep, setSelectedObstacles, audioRef }: Obs
     setCurrentStep('message');
   };
 
-  const modalText = `Você começou bem! 👍<br/><br/>Uma boa parte não toma essa atitude por medo, preguiça ou até mesmo achar que não precisa, mas quando se dá conta, está atolado no operacional, travado e sem conseguir escalar com previsibilidade.<br/><br/>Se você está pronto para implementar Inteligência artificial de verdade em seu negócio, este é o caminho.<br/><br/>Mas se você acha que já sabe de tudo e que não precisa de nós, recomendo sair dessa pagina, não perca o seu e muito menos o nosso tempo.<br/><br/>Você chegou até aqui, talvez possa ter acesso ao nosso Ecossistema RAA (raciocinio autônomo avançado).<br/><br/>Com certeza você será recompensado!`;
+  const modalText = `Você começou bem! <br/><br/>Uma boa parte não toma essa atitude por medo, preguiça ou até mesmo achar que não precisa, mas quando se dá conta, está atolado no operacional, travado e sem conseguir escalar com previsibilidade.<br/><br/>Se você está pronto para implementar Inteligência artificial de verdade em seu negócio, este é o caminho.<br/><br/>Mas se você acha que já sabe de tudo e que não precisa de nós, recomendo sair dessa pagina, não perca o seu e muito menos o nosso tempo.<br/><br/>Você chegou até aqui, talvez possa ter acesso ao nosso Ecossistema RAA (raciocinio autônomo avançado).<br/><br/>Com certeza você será recompensado!`;
 
 
 
@@ -92,7 +92,7 @@ const ObstacleSection = ({ setCurrentStep, setSelectedObstacles, audioRef }: Obs
         <Card className="w-full p-2 rounded-3xl border border-[#141414] bg-[#141414]">
           <CardContent className="w-full p-8 md:p-12 rounded-2xl border border-[#323232] text-white text-left">
             <h2 className="text-2xl font-bold mb-4 text-center">ETAPA DESBLOQUEADA!</h2>
-            <div className="leading-relaxed break-words">
+            <div className="leading-relaxed break-words max-h-[60vh] overflow-y-auto pr-4">
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter

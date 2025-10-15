@@ -95,7 +95,7 @@ const InitialSection = ({
         return (
           <AnimatedSection stepKey="form" className="w-full flex flex-col items-center p-4">
             <div className="text-center mb-8">
-              <h2 className="text-6xl font-light mb-4 text-white" style={{ lineHeight: '1.3' }}>
+              <h2 className="text-4xl md:text-6xl font-light mb-4 text-white" style={{ lineHeight: '1.3' }}>
                 Nós iremos diminuir a carga operacional, <br /> aumentar o ROI e escalar a sua operaçao<br /> utilizando nosso Ecossistema RAA
               </h2>
               <p className="text-md md:text-lg text-[#929292]">

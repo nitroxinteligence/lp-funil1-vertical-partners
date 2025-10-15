@@ -42,8 +42,8 @@ export default async (req: any, res: any) => {
     Você deve gerar um diagnóstico estratégico para ${name}. O resultado DEVE ser um objeto JSON com as chaves "personalizedSummary" e "timelineSolutions".
 
     **Análise Crítica (MUITO IMPORTANTE):**
-    - A biografia do Instagram (`instagramProfile.biography`) é a fonte de informação mais confiável sobre o negócio real do lead.
-    - O campo `industry` é a categoria que o lead selecionou, mas pode ser genérico.
+    - A biografia do Instagram (\`instagramProfile.biography\`) é a fonte de informação mais confiável sobre o negócio real do lead.
+    - O campo \`industry\` é a categoria que o lead selecionou, mas pode ser genérico.
     - **Se a biografia contradisser a indústria, você DEVE basear seu diagnóstico na biografia.** Por exemplo, se a indústria for 'Clínica' mas a bio falar sobre 'Advogados', todo o seu texto deve ser focado em advocacia. Ignore a indústria selecionada se a bio for mais específica. Adapte sua linguagem para o nicho real do lead.
 
     1.  **personalizedSummary (String):**

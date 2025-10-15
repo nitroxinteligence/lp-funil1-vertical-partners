@@ -34,26 +34,32 @@ export default async (req: any, res: any) => {
       headers: {
         'X-RapidAPI-Key': rapidApiKey,
         'X-RapidAPI-Host': 'instagram-looter2.p.rapidapi.com'
-      }
+      },
+      validateStatus: () => true, // Sempre trata a resposta para inspecionar os dados
     };
     const response = await axios.request(options);
     const profileData = response.data;
-    console.log('[API /instagram-lookup] Successfully fetched data from RapidAPI.');
+
+    // VALIDAÇÃO DEFINITIVA:
+    // Um perfil real DEVE ter uma foto e um nome completo.
+    // Se a API retornar um objeto sem esses campos, é um perfil inválido.
+    if (response.status !== 200 || !profileData || !profileData.profile_pic_url || !profileData.full_name) {
+      console.warn(`[API /instagram-lookup] FINAL VALIDATION FAILED for username: ${username}. API returned insufficient data.`);
+      return res.status(404).json({ error: 'Perfil não encontrado. Tem certeza que digitou certo?' });
+    }
+    
+    console.log('[API /instagram-lookup] Successfully fetched and validated data from RapidAPI.');
 
     // 2. Chamar a OpenAI para gerar uma mensagem personalizada
-    console.log('[API /instagram-lookup] Calling OpenAI to generate custom message...');
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const prompt = `
       Com base nos seguintes dados de um perfil do Instagram, crie uma mensagem de saudação curta (1-2 frases), amigável e personalizada para o usuário chamado ${profileData.full_name}. Mencione algo específico sobre a biografia dele.
-
       Dados do Perfil:
       - Nome Completo: ${profileData.full_name}
       - Username: ${profileData.username}
       - Biografia: ${profileData.biography}
       - Seguidores: ${profileData.follower_count}
-
       Exemplo de Mensagem: ${profileData.full_name}! Vimos que você é o fundador da Vertical Lex. Impressionante o que você está construindo para advogados!
-
       Mensagem:
     `;
 
@@ -62,7 +68,6 @@ export default async (req: any, res: any) => {
       messages: [{ role: 'user', content: prompt }],
     });
     const customMessage = openAIResponse.choices[0].message.content || `Olá, ${profileData.full_name}!`;
-    console.log('[API /instagram-lookup] Successfully generated custom message.');
 
     // 3. Retornar os dados combinados
     return res.status(200).json({
@@ -77,18 +82,7 @@ export default async (req: any, res: any) => {
     });
 
   } catch (error: any) {
-    console.error('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-    console.error('[API /instagram-lookup] FATAL ERROR:');
-    if (axios.isAxiosError(error)) {
-      console.error('Axios Error Message:', error.message);
-      if (error.response) {
-        console.error('Response Status:', error.response.status);
-        console.error('Response Data:', JSON.stringify(error.response.data, null, 2));
-      }
-    } else {
-      console.error('Non-Axios Error:', error.message);
-    }
-    console.error('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-    return res.status(500).json({ error: 'Failed to fetch Instagram profile.' });
+    console.error('[API /instagram-lookup] A fatal error occurred:', error);
+    return res.status(500).json({ error: 'Ocorreu um erro inesperado ao buscar o perfil.' });
   }
 };

@@ -9,6 +9,9 @@ import cors from 'cors';
 
 dotenv.config();
 
+const apiKey = process.env.OPENAI_API_KEY;
+console.log(`[API Server] Checking OpenAI Key: ${apiKey ? `sk-**********${apiKey.slice(-4)}` : 'NOT FOUND'}`);
+
 const app = express();
 const port = 3001;
 

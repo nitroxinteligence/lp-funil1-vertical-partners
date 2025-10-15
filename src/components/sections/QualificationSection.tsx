@@ -206,7 +206,7 @@ const QualificationSection = ({ setCurrentStep, setIndustry, setInstagramProfile
                         Conectando...
                       </div>
                     ) : (
-                      'Conectar instagram'
+                      'Analisar instagram'
                     )}
                   </RainbowButton>
                 </form>

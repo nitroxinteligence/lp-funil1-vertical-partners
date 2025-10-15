@@ -71,6 +71,9 @@ const QualificationSection = ({ setCurrentStep, setIndustry, setInstagramProfile
     }
   };
 
+  const [isOtherSelected, setIsOtherSelected] = useState(false);
+  const [otherIndustry, setOtherIndustry] = useState('');
+
   const options = [
     'Dono de Escritório de Advocacia',
     'Dono de Clínica médica, estética ou saúde',
@@ -78,8 +81,20 @@ const QualificationSection = ({ setCurrentStep, setIndustry, setInstagramProfile
   ];
 
   const handleSelect = (option: string) => {
-    setSelectedOption(option);
-    setIndustry(option);
+    if (option === 'Outro') {
+      setIsOtherSelected(true);
+      setSelectedOption('Outro');
+      setIndustry(''); // Clear industry when "Other" is selected
+    } else {
+      setIsOtherSelected(false);
+      setSelectedOption(option);
+      setIndustry(option);
+    }
+  };
+
+  const handleOtherInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOtherIndustry(e.target.value);
+    setIndustry(e.target.value);
   };
 
   return (
@@ -113,6 +128,26 @@ const QualificationSection = ({ setCurrentStep, setIndustry, setInstagramProfile
                     <span className="whitespace-normal text-left flex-1">{option}</span>
                   </Button>
                 ))}
+                {isOtherSelected ? (
+                  <Input
+                    placeholder="Digite sua área"
+                    value={otherIndustry}
+                    onChange={handleOtherInputChange}
+                    className="bg-[#202020] border-[#3D3D3D] text-white p-4 rounded-lg placeholder:text-neutral-600 h-12"
+                  />
+                ) : (
+                  <Button
+                    variant="outline"
+                    onClick={() => handleSelect('Outro')}
+                    className={`w-full bg-transparent text-white px-6 py-10 rounded-lg text-left justify-start transition-all duration-300 flex items-center ${
+                      selectedOption === 'Outro'
+                        ? 'border-custom-gold'
+                        : 'border-[#3D3D3D] hover:border-custom-gold'
+                    }`}
+                  >
+                    <span className="whitespace-normal text-left flex-1">Outro? Se sim, qual?</span>
+                  </Button>
+                )}
               </div>
             </CardContent>
           </Card>

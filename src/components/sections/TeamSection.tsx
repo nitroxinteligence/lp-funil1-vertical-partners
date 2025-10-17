@@ -34,7 +34,7 @@ export default function TeamSection() {
           {/* Título */}
           <AnimatedContainer delay={0.2}>
             <h2 className="text-4xl md:text-6xl font-light mb-8 text-center leading-tight tracking-tight text-white">
-              As mentes por trás da VX Company
+              As mentes por trás da Vertical Partners
             </h2>
           </AnimatedContainer>
           

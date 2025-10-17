@@ -158,7 +158,7 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
       content: (
         <Card className="w-full p-2 rounded-3xl border border-[#141414] bg-transparent">
           <CardContent className="w-full p-6 rounded-2xl border border-[#323232] bg-[#141414]">
-            <p>Você encontrou a VX Company através de tráfego pago, buscando soluções para escalar seu negócio.</p>
+            <p>Você encontrou a Vertical Partners através de tráfego pago, buscando soluções para escalar seu negócio.</p>
             <Badge variant="secondary" className="mt-4">Origem: Meta ADS</Badge>
           </CardContent>
         </Card>
@@ -169,7 +169,7 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
       content: (
         <Card className="w-full p-2 rounded-3xl border border-[#141414] bg-transparent">
           <CardContent className="w-full p-6 rounded-2xl border border-[#323232] bg-[#141414]">
-            <p>Aqui você entenderá como a VX Company vai transformar a sua operação utilizando nosso Ecossistema RAA.</p>
+            <p>Aqui você entenderá como a Vertical Partners vai transformar a sua operação utilizando nosso Ecossistema RAA.</p>
           </CardContent>
         </Card>
       ),

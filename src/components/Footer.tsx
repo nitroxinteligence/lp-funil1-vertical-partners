@@ -6,10 +6,10 @@ const Footer = () => {
           <span>Site desenvolvido profissionalmente em minutos 100% com IA</span>
         </div>
         <div className="w-full md:w-1/3 text-center font-bold text-neutral-400">
-          <span>VX COMPANY</span>
+          <span>Vertical Partners</span>
         </div>
         <div className="w-full md:w-1/3 text-center md:text-right">
-          <span>Copyright 2025 – Todos direitos reservados.</span>
+          <span>Copyright 2025 – Todos direitos reservados. | <a href="/politicas" className="hover:text-neutral-400">Política de Privacidade</a></span>
         </div>
       </div>
     </footer>

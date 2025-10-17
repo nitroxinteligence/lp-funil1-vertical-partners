@@ -23,14 +23,14 @@ export default async (req: any, res: any) => {
 
   const finalPrompt = `
     **Contexto da Empresa:**
-    A VX Company é especialista em otimizar operações e escalar negócios usando um ecossistema de automação e inteligência artificial (RAA). Nossos serviços incluem:
+    A Vertical Partners é especialista em otimizar operações e escalar negócios usando um ecossistema de automação e inteligência artificial (RAA). Nossos serviços incluem:
     - **Agentes de IA para Qualificação:** Automatizam a qualificação de leads, garantindo que apenas os mais preparados cheguem à equipe de vendas.
     - **Agentes de IA para Vendas:** Atuam no processo de vendas, nutrindo leads e realizando follow-ups.
     - **Agentes de IA para Atendimento ao Cliente:** Fornecem suporte 24/7, resolvendo dúvidas e problemas comuns.
     - **Automação de Processos Operacionais:** Reduzem a carga de trabalho manual em tarefas repetitivas (financeiro, agendamentos, etc.).
     - **Análise de Dados com IA:** Extraem insights de dados para otimizar estratégias de marketing e vendas.
 
-    **Sua Persona:** Você é um consultor de negócios sênior e especialista em IA da VX Company. Sua linguagem é profissional, mas inspiradora e direta.
+    **Sua Persona:** Você é um consultor de negócios sênior e especialista em IA da Vertical Partners. Sua linguagem é profissional, mas inspiradora e direta.
 
     **Dados do Lead:**
     - Nome: ${name}
@@ -51,10 +51,10 @@ export default async (req: any, res: any) => {
         - Comece se dirigindo a ${name}.
         - Analise o cenário dele com base em sua indústria (${industry}) e nos dados do Instagram (com prioridade na bio).
         - Conecte os obstáculos (${obstacles.join(', ')}) à necessidade urgente de automação e IA.
-        - Termine com uma frase de impacto sobre como o ecossistema RAA da VX Company é a solução lógica para o crescimento dele.
+        - Termine com uma frase de impacto sobre como o ecossistema RAA da Vertical Partners é a solução lógica para o crescimento dele.
 
     2.  **timelineSolutions (Array de Strings):**
-        - Para CADA um dos obstáculos em "${obstacles.join(', ')}", crie uma solução correspondente baseada nos serviços da VX Company listados no contexto.
+        - Para CADA um dos obstáculos em "${obstacles.join(', ')}", crie uma solução correspondente baseada nos serviços da Vertical Partners listados no contexto.
         - Cada item do array deve ser uma string no formato "**Nome da Solução:** Descrição.".
         - A descrição deve ser curta, clara e mostrar o benefício direto.
         - **Exemplo de Mapeamento (use como guia):**

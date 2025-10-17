@@ -20,7 +20,7 @@ export default async (req: any, res: any) => {
   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   const finalPrompt = `
-    **Persona:** Você é um consultor de negócios sênior e especialista em IA da VX Company.
+    **Persona:** Você é um consultor de negócios sênior e especialista em IA da Vertical Partners.
 
     **Dados do Perfil do Instagram do Lead:**
     ---
@@ -30,13 +30,13 @@ export default async (req: any, res: any) => {
     **Sua Tarefa OBRIGATÓRIA:**
     1. Analise os dados do perfil (biografia, número de seguidores, nome).
     2. Crie uma mensagem curta, personalizada e impactante (máximo 2 frases).
-    3. A mensagem deve reconhecer o estado atual do negócio do lead (com base na bio) e sugerir o potencial de crescimento com a ajuda da VX Company.
+    3. A mensagem deve reconhecer o estado atual do negócio do lead (com base na bio) e sugerir o potencial de crescimento com a ajuda da Vertical Partners.
     4. Seja direto, use um tom levemente provocador e inspirador.
     5. **NÃO** use o nome do usuário.
     6. **NÃO** se apresente. Vá direto ao ponto.
 
     **Exemplos de Saída:**
-    - "Percebi que você já tem uma base sólida, mas a sua bio mostra que podemos ir muito além. A VX Company existe para transformar potencial em domínio de mercado."
+    - "Percebi que você já tem uma base sólida, mas a sua bio mostra que podemos ir muito além. A Vertical Partners existe para transformar potencial em domínio de mercado."
     - "Sua presença online é boa, mas parece que falta uma peça para escalar de verdade. Estamos aqui para ser essa peça e levar sua operação para o próximo nível."
     - "Com ${profileData.followers} seguidores, você claramente sabe o que está fazendo. Agora, imagine esse alcance com processos otimizados por IA para converter seguidores em clientes."
 

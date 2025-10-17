@@ -1,7 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Header from "./components/Header";
 import InitialSection from "./components/sections/InitialSection";
 import Footer from "./components/Footer";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 
 export type Step = 'form' | 'sound' | 'qualification' | 'obstacle' | 'message' | 'rejection' | 'solution' | 'diagnostic';
 
@@ -15,6 +16,17 @@ function App() {
   const [instagramProfile, setInstagramProfile] = useState(null);
   const [customMessage, setCustomMessage] = useState('');
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [path, setPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
 
   const handleAdvance = (step: Step) => {
     if (step === 'sound' && audioRef.current) {
@@ -23,7 +35,7 @@ function App() {
     setCurrentStep(step);
   };
 
-const handleBack = () => {
+  const handleBack = () => {
     if (currentStep === 'solution') {
       setCurrentStep('message');
     } else if (currentStep === 'rejection') {
@@ -38,6 +50,10 @@ const handleBack = () => {
       setCurrentStep('form');
     }
   };
+
+  if (path === '/politicas') {
+    return <PrivacyPolicyPage />;
+  }
 
   return (
     <div className="bg-[#0f0f0f] min-h-screen flex flex-col">

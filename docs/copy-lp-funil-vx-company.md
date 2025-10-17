@@ -145,11 +145,11 @@ Remova a seçao “O que você vai receber” e adicione:
 - Itens da timeline:
 
 Titulo da timeline: Descoberta
-Texto da timeline: Você encontrou a VX Company através do tráfego pago
+Texto da timeline: Você encontrou a Vertical Partners através do tráfego pago
 badege: Origem: Meta ADS
 
 Titulo da timeline: Diagnostico personalizado
-Texto da timeline: Aqui voce entenderá como a VX Company vai transformar a sua operação utilizando nosso Ecossistema RAA
+Texto da timeline: Aqui voce entenderá como a Vertical Partners vai transformar a sua operação utilizando nosso Ecossistema RAA
 
 Titulo da timeline: Próximos 90 dias
 Nesta etapa da timeline, vai aparecer tudo de “O que você vai receber”
@@ -163,8 +163,8 @@ Escalando sem inflar custos
 Mais leads qualificados
 
 Titulo da timeline: Diagnostico personalizado
-Texto da timeline: Aqui voce entenderá como a VX Company vai transformar a sua operação utilizando nosso Ecossistema RAA
+Texto da timeline: Aqui voce entenderá como a Vertical Partners vai transformar a sua operação utilizando nosso Ecossistema RAA
 
-3. Agora adicione a próxima seçao que é “As mentes por trás da VX Company”
+3. Agora adicione a próxima seçao que é “As mentes por trás da Vertical Partners”
 
 - Extraia essa seçao que está na pasta “lp-funil-1-vertical-lex” que é a seçao “As mentes por trás da Vertical Lex”

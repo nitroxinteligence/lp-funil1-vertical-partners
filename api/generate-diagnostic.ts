@@ -9,7 +9,7 @@ export default async (req: any, res: any) => {
 
   console.log('[API /generate-diagnostic] Received request:', req.body);
 
-  const { name, industry, obstacles, site, instagramProfile } = req.body;
+  const { name, industry, obstacles, instagramProfile } = req.body;
 
   if (!name || !industry || !obstacles) {
     return res.status(400).json({ error: 'Missing required fields.' });

@@ -9,7 +9,7 @@ const Footer = () => {
           <span>Vertical Partners</span>
         </div>
         <div className="w-full md:w-1/3 text-center md:text-right">
-          <span>Copyright 2025 – Todos direitos reservados. | <a href="/politicas" className="hover:text-neutral-400">Política de Privacidade</a></span>
+          <span>Copyright 2025 – Todos direitos reservados. | <a href="/politicas" className="hover:text-neutral-400">Política</a></span>
         </div>
       </div>
     </footer>

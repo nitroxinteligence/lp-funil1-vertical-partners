@@ -232,7 +232,7 @@ const QualificationSection = ({ setCurrentStep, setIndustry, setInstagramProfile
                   </div>
                   {isTypewriterComplete && (
                     <RainbowButton onClick={() => setIsInstaModalOpen(false)} className="h-auto text-white px-12 py-3">
-                      CONTINUAR! 🧠
+                      Quero prosseguir
                     </RainbowButton>
                   )}
                 </>

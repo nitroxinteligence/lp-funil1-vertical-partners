@@ -14,6 +14,7 @@ import DiagnosticSection from './DiagnosticSection';
 import { Step } from '@/App';
 import { AnimatePresence } from 'framer-motion';
 import { AnimatedSection } from '@/components/ui/AnimatedSectionWrapper';
+import VerticalPartnersLogo from '@/components/ui/VerticalPartnersLogo';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "O nome deve ter pelo menos 2 caracteres." }),
@@ -95,6 +96,9 @@ const InitialSection = ({
         return (
           <AnimatedSection stepKey="form" className="w-full flex flex-col items-center p-4">
             <div className="text-center mb-8">
+              <div className="mb-8 flex justify-center">
+                <VerticalPartnersLogo className="opacity-90" width={250} height={35} />
+              </div>
               <h2 className="text-4xl md:text-6xl font-light mb-4 text-white" style={{ lineHeight: '1.3' }}>
                 Nós iremos diminuir a carga operacional, <br /> aumentar o ROI e escalar a sua operaçao<br /> utilizando nosso Ecossistema RAA
               </h2>

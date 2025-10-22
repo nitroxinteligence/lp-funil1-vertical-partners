@@ -34,7 +34,7 @@ export default function TeamSection() {
           {/* Título */}
           <AnimatedContainer delay={0.2}>
             <h2 className="text-4xl md:text-6xl font-light mb-8 text-center leading-tight tracking-tight text-white">
-              As mentes por trás da Vertical Partners
+              Mentes por trás <br />da Vertical Partners
             </h2>
           </AnimatedContainer>
           
@@ -47,7 +47,7 @@ export default function TeamSection() {
                   <div className="relative rounded-lg border" style={{ backgroundColor: '#121212', borderColor: '#292929' }}>
                     <div className="w-full">
                       <img 
-                        src="https://nxbcmrqcadrgzhrengsc.supabase.co/storage/v1/object/sign/documents%20vision-site/docs-2/img-2.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOTNhNjgzZC1kYmQwLTRiZDctOGUzMy1hYjZmMjEwZGNhMjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2N1bWVudHMgdmlzaW9uLXNpdGUvZG9jcy0yL2ltZy0yLmpwZyIsImlhdCI6MTc2MDQ2NDczMywiZXhwIjoyMTA3MzYwNzMzfQ.e-DbwC_qVXro_sqL26p4P6hi0IDAFU-IX0vb1NMwgd4" 
+                        src="https://spciiyaefysixmfekpvo.supabase.co/storage/v1/object/sign/docs-lp-funil-1/img-mateus-m-perfil.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iNTZlNzYwYS1kYzlmLTRjNzYtYTc3Ny0yN2M3ZTIyMTkzOGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2NzLWxwLWZ1bmlsLTEvaW1nLW1hdGV1cy1tLXBlcmZpbC5qcGciLCJpYXQiOjE3NjExNzExMjksImV4cCI6MjEwODA2NzEyOX0.-VcRKL1l9JpW9Bdf_XHfg21z0estb8ezx0vYS_68bi0" 
                         alt="Mateus Paz" 
                         className="w-full h-96 object-cover rounded-t-lg"
                       />
@@ -72,7 +72,7 @@ export default function TeamSection() {
                   <div className="relative rounded-lg border" style={{ backgroundColor: '#121212', borderColor: '#292929' }}>
                     <div className="w-full">
                       <img 
-                        src="https://nxbcmrqcadrgzhrengsc.supabase.co/storage/v1/object/sign/documents%20vision-site/docs-2/img-1.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOTNhNjgzZC1kYmQwLTRiZDctOGUzMy1hYjZmMjEwZGNhMjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2N1bWVudHMgdmlzaW9uLXNpdGUvZG9jcy0yL2ltZy0xLkpQRyIsImlhdCI6MTc2MDQ2NDY5OSwiZXhwIjoyMTA3MzYwNjk5fQ.MvnTuxhdCqqCKynBi4HMnaGs45C6VT56xiUBl3lLkR0" 
+                        src="https://spciiyaefysixmfekpvo.supabase.co/storage/v1/object/sign/docs-lp-funil-1/img-gessyan-l-perfil.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iNTZlNzYwYS1kYzlmLTRjNzYtYTc3Ny0yN2M3ZTIyMTkzOGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2NzLWxwLWZ1bmlsLTEvaW1nLWdlc3N5YW4tbC1wZXJmaWwuSlBHIiwiaWF0IjoxNzYxMTcxMTU3LCJleHAiOjIxMDgwNjcxNTd9.VTfT_mzDhgOBEXYo96nqyZJjYTiwqhqx0ivpw9McKu4" 
                         alt="Gessyan Lion" 
                         className="w-full h-96 object-cover rounded-t-lg"
                       />

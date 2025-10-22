@@ -12,6 +12,7 @@ import { AiLoader } from '../ui/AiLoader';
 import { RainbowButton } from '../ui/RainbowButton';
 import { supabase } from '@/lib/supabase';
 import api from '@/lib/api';
+import { generateWhatsAppURL } from '@/lib/whatsappMessage';
 
 interface DiagnosticSectionProps {
   name: string;
@@ -280,7 +281,10 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
 
           <div className="mt-20 flex justify-center">
             <RainbowButton
-              onClick={() => window.open('https://wa.me/5581982986181', '_blank')}
+              onClick={() => {
+                const whatsappURL = generateWhatsAppURL('5581982986181', industry, obstacles);
+                window.open(whatsappURL, '_blank');
+              }}
               className="h-auto text-white px-12 py-4"
             >
               Agendar Reunião
@@ -290,7 +294,7 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
       </AnimatedSection>
 
       <Modal isOpen={isScrollModalOpen}>
-        <audio ref={scrollModalAudioRef} src="https://nxbcmrqcadrgzhrengsc.supabase.co/storage/v1/object/sign/documents%20vision-site/docs-2/VX-C-AUDIO-1-2.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOTNhNjgzZC1kYmQwLTRiZDctOGUzMy1hYjZmMjEwZGNhMjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2N1bWVudHMgdmlzaW9uLXNpdGUvZG9jcy0yL1ZYLUMtQVVESU8tMS0yLm1wMyIsImlhdCI6MTc2MDQwNTIwMywiZXhwIjoyMTA3MzAxMjAzfQ.hQ-qKhwUzakwJFeNoImFzrkoKH-3BVamkHwF6Kegdb4" autoPlay />
+        <audio ref={scrollModalAudioRef} src="https://spciiyaefysixmfekpvo.supabase.co/storage/v1/object/sign/docs-lp-funil-1/audio-final-lp-funil-1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iNTZlNzYwYS1kYzlmLTRjNzYtYTc3Ny0yN2M3ZTIyMTkzOGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2NzLWxwLWZ1bmlsLTEvYXVkaW8tZmluYWwtbHAtZnVuaWwtMS5tcDMiLCJpYXQiOjE3NjExNzExNzYsImV4cCI6MjEwODA2NzE3Nn0.mhRjxoGLLG8Oof1T3b6YbtZHexPMcT5M9fN8jpZClUo" autoPlay />
         <Card className="w-full max-w-lg p-2 rounded-3xl border border-[#141414] bg-[#141414]">
           <CardContent className="w-full p-8 md:p-12 rounded-2xl border border-[#323232] text-white text-center">
             <div className="leading-relaxed text-2xl font-light">

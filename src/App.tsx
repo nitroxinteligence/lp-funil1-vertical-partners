@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div className="bg-[#0f0f0f] min-h-screen flex flex-col">
-      <audio ref={audioRef} src="https://nxbcmrqcadrgzhrengsc.supabase.co/storage/v1/object/sign/documents%20vision-site/lp-sound.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOTNhNjgzZC1kYmQwLTRiZDctOGUzMy1hYjZmMjEwZGNhMjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2N1bWVudHMgdmlzaW9uLXNpdGUvbHAtc291bmQubXAzIiwiaWF0IjoxNzYwMzg5MDI4LCJleHAiOjIxMDcyODUwMjh9.1qWUqVH5pwuhRew2L0B027r_6v4rehiwyu5AzwNomCE" loop />
+      <audio ref={audioRef} src="https://spciiyaefysixmfekpvo.supabase.co/storage/v1/object/sign/docs-lp-funil-1/som-de-fundo-lp-funil-1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iNTZlNzYwYS1kYzlmLTRjNzYtYTc3Ny0yN2M3ZTIyMTkzOGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2NzLWxwLWZ1bmlsLTEvc29tLWRlLWZ1bmRvLWxwLWZ1bmlsLTEubXAzIiwiaWF0IjoxNzYxMTcxMjg1LCJleHAiOjIxMDgwNjcyODV9.Ivbf6ua7TfvbXWdDVWVuSYsFAGcPj08DxXZtuNftFsk" loop />
       <Header onBackClick={handleBack} currentStep={currentStep} />
       <main className="flex-grow pt-16 flex items-center justify-center py-16">
         <InitialSection

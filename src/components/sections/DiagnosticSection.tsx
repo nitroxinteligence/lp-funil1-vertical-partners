@@ -80,7 +80,7 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
 
           // Após gerar o diagnóstico, envie os dados para o Supabase
           const { error: supabaseError } = await supabase
-            .from('perfis_leads')
+            .from('leads_funil_1')
             .insert([
               {
                 lead_name: name,

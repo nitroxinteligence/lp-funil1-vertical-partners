@@ -296,7 +296,7 @@ const DiagnosticSection: React.FC<DiagnosticSectionProps> = ({
         </div>
       </AnimatedSection>
 
-      <Modal isOpen={isScrollModalOpen}>
+      <Modal isOpen={isScrollModalOpen} onClose={() => setIsScrollModalOpen(false)}>
         <audio ref={scrollModalAudioRef} src="https://spciiyaefysixmfekpvo.supabase.co/storage/v1/object/sign/docs-lp-funil-1/audio-final-lp-funil-1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iNTZlNzYwYS1kYzlmLTRjNzYtYTc3Ny0yN2M3ZTIyMTkzOGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2NzLWxwLWZ1bmlsLTEvYXVkaW8tZmluYWwtbHAtZnVuaWwtMS5tcDMiLCJpYXQiOjE3NjExNzExNzYsImV4cCI6MjEwODA2NzE3Nn0.mhRjxoGLLG8Oof1T3b6YbtZHexPMcT5M9fN8jpZClUo" autoPlay />
         <Card className="w-full max-w-lg p-2 rounded-3xl border border-[#141414] bg-[#141414]">
           <CardContent className="w-full p-8 md:p-12 rounded-2xl border border-[#323232] text-white text-center">

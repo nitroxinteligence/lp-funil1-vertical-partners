@@ -87,7 +87,7 @@ const ObstacleSection = ({ setCurrentStep, setSelectedObstacles, audioRef }: Obs
 
   return (
     <>
-      <Modal isOpen={isModalOpen}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <audio ref={modalAudioRef} id="modal-audio" src="https://spciiyaefysixmfekpvo.supabase.co/storage/v1/object/sign/docs-lp-funil-1/audio-inicio-lp-funil-1.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iNTZlNzYwYS1kYzlmLTRjNzYtYTc3Ny0yN2M3ZTIyMTkzOGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2NzLWxwLWZ1bmlsLTEvYXVkaW8taW5pY2lvLWxwLWZ1bmlsLTEubXAzIiwiaWF0IjoxNzYxMTcxMjE0LCJleHAiOjIxMDgwNjcyMTR9.e2Sos6S3CA-tj_5AESfI2Pjb-jqGEMO6nue9cNwWl38" autoPlay></audio>
         <Card className="w-full p-2 rounded-3xl border border-[#141414] bg-[#141414]">
           <CardContent className="w-full p-8 md:p-12 rounded-2xl border border-[#323232] text-white text-left">
@@ -111,7 +111,7 @@ const ObstacleSection = ({ setCurrentStep, setSelectedObstacles, audioRef }: Obs
             {typingFinished && (
               <div className="mt-8 text-center">
                 <RainbowButton onClick={() => setIsModalOpen(false)} className="h-auto text-white px-12 py-4">
-                  Quero prosseguir ❤️
+                  Quero prosseguir!
                 </RainbowButton>
               </div>
             )}

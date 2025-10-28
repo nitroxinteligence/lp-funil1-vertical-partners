@@ -58,7 +58,7 @@ const getMessageFlow = (name: string, obstacles: string[]) => {
       },
     },
     'Não tenho um funil de captação que gere leads todos os dias': {
-      text: `${name}, sem novos contatos, qualquer negócio fica refém da sorte. O que poucos percebem é que dá pra gerar conversas reais todos os dias com o público certo de forma automática. Nosso Agente de Prospecção faz exatamente isso, enquanto você foca em atender. Quer ver quanto dinheiro tá ficando na mesa por não ter isso rodando ainda?`,
+      text: `${name}, sem novos contatos, qualquer negócio fica refém da sorte. O que poucos percebem é que dá pra gerar conversas reais todos os dias com o público certo de forma automática. Exemplo, esse funil é a prova viva disso, estamos te qualificando para depois possivelmente te vender algo no final, tudo de forma inteligente e sem falar no nosso Agente de Prospecção que faz exatamente TUDO isso, enquanto você foca em vender. Quer ver na prática funcionando e o quanto dinheiro tá ficando na mesa por não ter o nosso Ecossistema RAA rodando ainda?`,
       imageUrl: 'https://nxbcmrqcadrgzhrengsc.supabase.co/storage/v1/object/sign/documents%20vision-site/docs-2/4%201.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOTNhNjgzZC1kYmQwLTRiZDctOGUzMy1hYjZmMjEwZGNhMjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJkb2N1bWVudHMgdmlzaW9uLXNpdGUvZG9jcy0yLzQgMS5wbmciLCJpYXQiOjE3NjAzNjQ4NjgsImV4cCI6MjEwNzI2MDg2OH0.HNiQBWU-2KD4ep0oFczVuJZUtroP4dA2UraqLnttFiU',
       details: {
         features: [

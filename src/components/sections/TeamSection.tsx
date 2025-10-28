@@ -57,7 +57,7 @@ export default function TeamSection() {
                         Mateus Paz
                       </h3>
                       <p className="text-sm leading-relaxed" style={{ color: '#c1c1c1' }}>
-                        Sempre estive imerso no universo jurídico. Durante anos, como dono de uma agência, tive o privilégio de trabalhar lado a lado com advogados, auxiliando-os a estruturar suas estratégias de marketing e vendas. Essa jornada me permitiu não apenas conhecer as suas dores, mas também desenvolver as soluções para superá-las.
+                        Sempre estive imerso no universo digital. Durante anos, como dono de empresas, tive o privilégio de escalar a minha empresa e também outras empresas, lado a lado com os empresários, auxiliando-os a estruturas seus negócios, tecnologias, estratégias de marketing e vendas. Essa jornada me permitiu adquirir bagagem e conhecimento suficiente para emergir no mundo das IAs, unindo toda a minha expertise para hoje ter a especialidade de criar as melhores e mais eficientes IAs para o seu negócio.
                       </p>
                     </div>
                   </div>

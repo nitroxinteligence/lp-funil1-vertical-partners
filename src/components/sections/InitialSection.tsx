@@ -99,11 +99,14 @@ const InitialSection = ({
               <div className="mb-8 flex justify-center">
                 <VerticalPartnersLogo className="opacity-90" width={250} height={35} />
               </div>
-              <h2 className="text-4xl md:text-6xl font-light mb-4 text-white" style={{ lineHeight: '1.3' }}>
-                Nós iremos diminuir a carga operacional, <br /> aumentar o ROI e escalar a sua operaçao<br /> utilizando nosso Ecossistema RAA
+              <h2 className="text-4xl md:text-5xl font-light mb-2 text-white" style={{ lineHeight: '1.3' }}>
+                Nós diminuimos a carga operacional, <br /> utilizando Ecossistema RAA próprio com IA integrada<br /> que ninguém está aplicando no mercado
+              </h2>
+              <h2 className="text-4xl md:text-4xxl font-light mb-4" style={{ lineHeight: '1.3', color: '#686868' }}>
+                (além dos nossos clientes).
               </h2>
               <p className="text-md md:text-lg text-[#929292]">
-                O que irei te provar vai além de automações e simples inteligências artificiais
+                O que você verá agora vai além de automações e simples inteligências artificiais.
               </p>
             </div>
             <div className="w-full max-w-2xl">

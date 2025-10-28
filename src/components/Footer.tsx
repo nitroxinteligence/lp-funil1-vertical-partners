@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-neutral-800 text-neutral-500 text-sm p-4">
+    <footer className="w-full border-t border-neutral-800 text-neutral-500 p-4" style={{ fontSize: '0.9rem' }}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
         <div className="w-full md:w-1/3 text-center md:text-left">
           <span>Site desenvolvido profissionalmente em minutos 100% com IA</span>

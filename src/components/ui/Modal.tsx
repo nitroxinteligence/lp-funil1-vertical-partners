@@ -1,25 +1,85 @@
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect } from 'react';
 
 interface ModalProps {
   isOpen: boolean;
+  onClose: () => void;
   children: React.ReactNode;
-  onClose?: () => void;
 }
 
-const Modal = ({ isOpen, children, onClose }: ModalProps) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previousActiveElement = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('overflow-hidden');
+      // Store the currently focused element
+      previousActiveElement.current = document.activeElement as HTMLElement;
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = 'var(--scrollbar-width, 0px)';
+      
+      // Focus trap - focus the modal
+      if (modalRef.current) {
+        modalRef.current.focus();
+      }
     } else {
-      document.body.classList.remove('overflow-hidden');
+      // Restore body scroll
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '';
+      
+      // Restore focus to previous element
+      if (previousActiveElement.current) {
+        previousActiveElement.current.focus();
+      }
     }
 
-    // Cleanup function to ensure the class is removed when the component unmounts
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '';
     };
   }, [isOpen]);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen, onClose]);
+
+  // Focus trap handler
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Tab' && modalRef.current) {
+      const focusableElements = modalRef.current.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+      if (event.shiftKey) {
+        if (document.activeElement === firstElement) {
+          lastElement?.focus();
+          event.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          firstElement?.focus();
+          event.preventDefault();
+        }
+      }
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -28,29 +88,36 @@ const Modal = ({ isOpen, children, onClose }: ModalProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8"
-          style={{
-            minHeight: "100vh",
-            minWidth: "100vw",
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-50 bg-black bg-opacity-50 backdrop-blur-sm"
+          style={{ 
+            height: '100dvh', // Dynamic viewport height
+            minHeight: '100vh', // Fallback for older browsers
+            display: 'flex',
+            alignItems: 'safe center', // Safe centering
+            justifyContent: 'center',
+            padding: 'max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left))'
           }}
+          onClick={onClose}
         >
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm" 
-            onClick={(e) => {
-              if (e.target === e.currentTarget && onClose) {
-                onClose();
-              }
-            }}
-          />
-          
-          {/* Modal Content */}
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="relative z-10 w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-2xl mx-auto max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)] md:max-h-[calc(100vh-4rem)] overflow-auto"
+            ref={modalRef}
+            initial={{ scale: 0.8, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.8, opacity: 0, y: 20 }}
+            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            className="relative bg-white rounded-lg shadow-xl overflow-auto focus:outline-none"
+            style={{
+              maxWidth: 'min(calc(100vw - 2rem), 600px)',
+              maxHeight: 'calc(100dvh - 2rem)', // Dynamic viewport height
+              minHeight: 'auto',
+              width: '100%'
+            }}
+            onClick={(e) => e.stopPropagation()}
+            onKeyDown={handleKeyDown}
+            tabIndex={-1}
+            role="dialog"
+            aria-modal="true"
           >
             {children}
           </motion.div>

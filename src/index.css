@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Modal and viewport improvements */
+:root {
+  --scrollbar-width: 0px;
+}
+
+/* Calculate scrollbar width for modal padding compensation */
+@media (hover: hover) {
+  :root {
+    --scrollbar-width: calc(100vw - 100%);
+  }
+}
+
+/* Ensure proper viewport units support */
+@supports (height: 100dvh) {
+  .modal-container {
+    height: 100dvh;
+  }
+}
+
+/* Fallback for browsers without dvh support */
+@supports not (height: 100dvh) {
+  .modal-container {
+    height: 100vh;
+  }
+}
+
+/* Improve modal accessibility and focus */
+.modal-focus-trap {
+  outline: none;
+}
+
+/* Smooth animations for better UX */
+.modal-content {
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
 @layer base {
   body {
     background-color: #0f0f0f;

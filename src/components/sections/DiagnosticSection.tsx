@@ -9,10 +9,8 @@ import { Button } from '../ui/button';
 import { Timeline } from '../ui/Timeline';
 import CheckIcon from '../ui/CheckIcon';
 import { AiLoader } from '../ui/AiLoader';
-import { RainbowButton } from '../ui/RainbowButton';
 import { supabase } from '@/lib/supabase';
 import api from '@/lib/api';
-import { generateWhatsAppURL } from '@/lib/whatsappMessage';
 
 interface DiagnosticSectionProps {
   name: string;
